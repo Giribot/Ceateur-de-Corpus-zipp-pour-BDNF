@@ -10,9 +10,14 @@ Bdnf et le système de corpus: cf ici: https://bdnf.bnf.fr/fr/corpus
 Utilisation:
 Il faut déjà le langage Python installé sur votre machine.
 Sur Windows:
-installer les deux fichiers RunMeFirst.bat et BdnfCreator.py dans un répertoire
+installer les deux fichiers:
+RunMeFirst.bat
+et
+BdnfCreator.py
+dans un répertoire
+
 Lancez RumMeFirst.bat en cliquant dessus.
-Ce script installe au cas où la bibliothêqu rembg de python puis lance le script "BdnfCreator.py"
+Ce script installe au cas où la bibliothêque "rembg" de python puis lance le script "BdnfCreator.py"
 
 Sur Linux: il me semble que es fichiers ".bat" de Windows ne marche pas.
 
@@ -23,6 +28,7 @@ pip install rembg
 Puis vous pouvez lancer le script
 BDNFcreator.py
 
+Pour générer des corpus en zip compatible avec BDNF
 Voilà, c'est rudimentaire mais ça fait le job.
 
 Bye !
