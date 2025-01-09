@@ -33,6 +33,10 @@ Ce script installe au cas où la bibliothêque "rembg" de python puis lance le s
 Sur Linux:
 il me semble que es fichiers ".bat" de Windows ne marche pas.
 
+pour Mac:
+debrouillez vous !
+(désolé, c'est un des seuls ordinateurs que je n'aile pas, mais ca ne devrait pas etre compliqué)
+
 Veuillez installer rembg et les autres bibliothèques bibliothèque python contenu dans le fichier texte RunMeFirst.bat dans ce répertoire.
 
 
