@@ -19,7 +19,7 @@ et
 BdnfCreator.py
 dans un répertoire
 
-Lancez RumMeFirst.bat en cliquant dessus.
+Lancez RunMeFirst.bat en cliquant dessus.
 Ce script installe au cas où la bibliothêque "rembg" de python puis lance le script "BdnfCreator.py"
 
 
