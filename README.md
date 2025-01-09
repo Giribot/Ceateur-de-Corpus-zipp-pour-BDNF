@@ -10,6 +10,7 @@ Bdnf et le système de corpus: cf ici: https://bdnf.bnf.fr/fr/corpus
 Utilisation:
 Il faut déjà le langage Python installé sur votre machine.
 
+
 Sur Windows:
 
 installer les deux fichiers:
