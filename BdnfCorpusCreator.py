@@ -23,41 +23,12 @@ def create_bdnf_zip(input_dir, output_zip, thumbnail_size=(256, 256), detour=Tru
                 if file.lower().endswith((".png", ".jpg", ".jpeg", ".bmp", ".gif")):
                     file_path = os.path.join(root, file)
 
-                    if detour:
-                        # Détourer l'image haute résolution
-                        try:
-                            with Image.open(file_path) as img:
-                                img = img.convert("RGBA")
-                                alpha = Image.new("L", img.size, 0)
-                                img = ImageOps.fit(img, img.size, centering=(0.5, 0.5))
-                                for x in range(img.size[0]):
-                                    for y in range(img.size[1]):
-                                        r, g, b, a = img.getpixel((x, y))
-                                        if r > 240 and g > 240 and b > 240:  # Détection des pixels blancs
-                                            alpha.putpixel((x, y), 0)
-                                        else:
-                                            alpha.putpixel((x, y), 255)
-                                img.putalpha(alpha)
-
-                                # Enregistrer l'image détourée dans le ZIP
-                                temp_highres_path = os.path.join(os.getcwd(), f"{file}.highres")
-                                img.save(temp_highres_path, format="PNG")
-                                highres_path = os.path.join(highres_dir, file)
-                                zipf.write(temp_highres_path, highres_path)
-                                os.remove(temp_highres_path)
-                        except Exception as e:
-                            print(f"Erreur lors du détourage pour {file}: {e}")
-
-                    else:
-                        # Ajouter l'image originale sans détourage dans le ZIP
-                        highres_path = os.path.join(highres_dir, file)
-                        zipf.write(file_path, highres_path)
-
-                    # Créer une vignette et l'ajouter
                     try:
                         with Image.open(file_path) as img:
                             img = img.convert("RGBA")
-                            if detour:
+
+                            if detour and not img.getchannel("A").getbbox() is not None:
+                                # Détourer uniquement si l'image n'a pas déjà un canal alpha significatif
                                 alpha = Image.new("L", img.size, 0)
                                 img = ImageOps.fit(img, img.size, centering=(0.5, 0.5))
                                 for x in range(img.size[0]):
@@ -69,14 +40,22 @@ def create_bdnf_zip(input_dir, output_zip, thumbnail_size=(256, 256), detour=Tru
                                             alpha.putpixel((x, y), 255)
                                 img.putalpha(alpha)
 
+                            # Enregistrer l'image haute résolution
+                            temp_highres_path = os.path.join(os.getcwd(), f"{file}.highres")
+                            img.save(temp_highres_path, format="PNG")
+                            highres_path = os.path.join(highres_dir, file)
+                            zipf.write(temp_highres_path, highres_path)
+                            os.remove(temp_highres_path)
+
+                            # Créer une vignette
                             img.thumbnail(thumbnail_size)
-                            thumbnail_path = os.path.join(thumbnails_dir, file)
                             temp_thumb_path = os.path.join(os.getcwd(), f"{file}.thumbnail")
                             img.save(temp_thumb_path, format="PNG")
+                            thumbnail_path = os.path.join(thumbnails_dir, file)
                             zipf.write(temp_thumb_path, thumbnail_path)
                             os.remove(temp_thumb_path)
                     except Exception as e:
-                        print(f"Erreur lors de la création de la vignette pour {file}: {e}")
+                        print(f"Erreur lors du traitement de l'image {file}: {e}")
 
         # Ajouter un fichier Cluster.xml vide par défaut (ou personnalisé)
         cluster_content = """<Cluster><Description>BDNF Corpus</Description></Cluster>"""
