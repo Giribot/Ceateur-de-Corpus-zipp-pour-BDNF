@@ -9,7 +9,9 @@ Bdnf et le système de corpus: cf ici: https://bdnf.bnf.fr/fr/corpus
 
 Utilisation:
 Il faut déjà le langage Python installé sur votre machine.
+
 Sur Windows:
+
 installer les deux fichiers:
 RunMeFirst.bat
 et
@@ -19,7 +21,9 @@ dans un répertoire
 Lancez RumMeFirst.bat en cliquant dessus.
 Ce script installe au cas où la bibliothêque "rembg" de python puis lance le script "BdnfCreator.py"
 
-Sur Linux: il me semble que es fichiers ".bat" de Windows ne marche pas.
+
+Sur Linux:
+il me semble que es fichiers ".bat" de Windows ne marche pas.
 
 Veuillez installer rembg dans ce répertoire avant de lancer le script:
 pip install rembg
