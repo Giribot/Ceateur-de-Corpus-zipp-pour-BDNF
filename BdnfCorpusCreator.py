@@ -1,6 +1,7 @@
 import os
 import zipfile
-from PIL import Image, ImageOps
+from PIL import Image
+from rembg import remove
 from tkinter import Tk, filedialog, simpledialog
 
 def create_bdnf_zip(input_dir, output_zip, thumbnail_size=(256, 256), detour=True):
@@ -27,18 +28,10 @@ def create_bdnf_zip(input_dir, output_zip, thumbnail_size=(256, 256), detour=Tru
                         with Image.open(file_path) as img:
                             img = img.convert("RGBA")
 
-                            if detour and not img.getchannel("A").getbbox() is not None:
-                                # Détourer uniquement si l'image n'a pas déjà un canal alpha significatif
-                                alpha = Image.new("L", img.size, 0)
-                                img = ImageOps.fit(img, img.size, centering=(0.5, 0.5))
-                                for x in range(img.size[0]):
-                                    for y in range(img.size[1]):
-                                        r, g, b, a = img.getpixel((x, y))
-                                        if r > 240 and g > 240 and b > 240:  # Détection des pixels blancs
-                                            alpha.putpixel((x, y), 0)
-                                        else:
-                                            alpha.putpixel((x, y), 255)
-                                img.putalpha(alpha)
+                            if detour:
+                                # Utiliser rembg pour supprimer le fond
+                                img_bytes = remove(open(file_path, "rb").read())
+                                img = Image.open(io.BytesIO(img_bytes)).convert("RGBA")
 
                             # Enregistrer l'image haute résolution
                             temp_highres_path = os.path.join(os.getcwd(), f"{file}.highres")
