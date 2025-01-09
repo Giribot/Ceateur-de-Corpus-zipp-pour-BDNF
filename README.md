@@ -5,4 +5,4 @@ il peut détourer ou pas vos images et génère un fichier zip normalement compa
 
 Amusez vous bien.
 
-Bdf et le système de corpus: cf ici: https://bdnf.bnf.fr/fr/corpus
+Bdnf et le système de corpus: cf ici: https://bdnf.bnf.fr/fr/corpus
