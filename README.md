@@ -2,7 +2,9 @@ Bonjour,
 Un petit script python qui prend un répertoire avec vos objets et images
 il peut détourer ou pas vos images et génère un fichier zip normalement compatible avec le programme BDNF de Gallica....
 (lire le site de gallica pour savoir comment rajouter des corpus, et donc les votres !)
-
+attention, le détourage d'objets oeut etre long car j'utilise une petite IA "Rembg" mais le résultat est bon.
+mais vous pouvez refuser le traitement par cette ia locale (bibliothèque python Rembg en tapant 'non'.
+vos données et images ne partent pas sur un serveur externe et sint integralement traitees en lical sur votre PC.
 Amusez vous bien.
 
 Bdnf et le système de corpus: cf ici: https://bdnf.bnf.fr/fr/corpus
