@@ -6,7 +6,7 @@ attention, le détourage d'objets oeut etre long car j'utilise une petite IA "Re
 mais vous pouvez refuser le traitement par cette ia locale (bibliothèque python Rembg en tapant 'non'.)
 du coup, sans le détourage, le traitement est tres rapide !
 vos données et images ne partent pas sur un serveur externe et sont intégralement traitées en local sur votre PC. +++
-c'est fou, on peut utiliser des bibliothèques IA sur python directement en 2025 en deux couls de cuillères à pot !
+c'est fou, on peut utiliser des bibliothèques IA sur python directement en 2025 en deux coups de cuillères à pot !
 (une première pour moi)
 Amusez vous bien.
 
