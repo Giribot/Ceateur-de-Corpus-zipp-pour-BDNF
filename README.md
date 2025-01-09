@@ -14,6 +14,9 @@ n'hesitez pas à forker pour donner à ce script une UI jolie et accessible à t
 
 Bdnf et le système de corpus: cf ici: https://bdnf.bnf.fr/fr/corpus
 
+In English: Here !
+https://bdnf.bnf.fr/en
+
 Utilisation:
 Il faut déjà le langage Python installé sur votre machine.
 
