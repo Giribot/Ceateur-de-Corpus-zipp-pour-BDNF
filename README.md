@@ -33,13 +33,11 @@ Ce script installe au cas où la bibliothêque "rembg" de python puis lance le s
 Sur Linux:
 il me semble que es fichiers ".bat" de Windows ne marche pas.
 
-Veuillez installer rembg dans ce répertoire avant de lancer le script:
-pip install rembg
+Veuillez installer rembg et les autres bibliothèques bibliothèque python contenu dans le fichier texte RunMeFirst.bat dans ce répertoire.
 
 
 Puis vous pouvez lancer le script
 BDNFcreator.py
-
 Pour générer des corpus en zip compatible avec BDNF
 Voilà, c'est rudimentaire mais ça fait le job.
 
