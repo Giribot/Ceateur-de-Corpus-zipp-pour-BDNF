@@ -1,5 +1,6 @@
 import os
 import zipfile
+import io  # Importation ajoutée
 from PIL import Image
 from rembg import remove
 from tkinter import Tk, filedialog, simpledialog
