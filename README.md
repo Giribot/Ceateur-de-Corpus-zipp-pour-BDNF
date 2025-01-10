@@ -49,7 +49,8 @@ Veuillez installer rembg et les autres bibliothèques bibliothèque python conte
 
 Puis vous pouvez lancer le script
 BDNFcreator.py
-Pour générer des corpus en zip compatible avec BDNF
+Pour générer des corpus en zip compatible avec BDNF.
+Pour installer ce corpus zippé généré: lancez le programm BDNF, puis chercher l'option dans le menu image "Importer corpus" et importer le fichier créé avec ce script dedans.
 Voilà, c'est rudimentaire mais ça fait le job.
 
 Bye !
@@ -102,7 +103,7 @@ Please install rembg and the other python libraries contained in the text file R
 
 Then you can run the script
 BDNFcreator.py
-To generate BDNF-compatible zipped corpora
+To generate BDNF-compatible zipped "corpus" you can install in the app BDNF via "Add Corpus" in this app.
 There you go, it's rudimentary but it does the job.
 
 Bye!
