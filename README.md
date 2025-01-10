@@ -69,6 +69,14 @@ C:\Users\...\AppData\LocalLow\BNF\BDNF\BDNFProjects\GlobalAssets
 et effacer le répertoire SystemeSolaire. du répertoire "GlobalAssets"
 
 Redémarrer le programme BDNF
+
+
+
+A noter: j'ai fait un autre petit outil qui pourrait vous être utile si vous voulez faire des bandes dessinées:
+SheetChopper qui découpe automatiquement des objets sur une image de type planche:
+https://github.com/Giribot/SheetChopper
+
+Bye !
 -----
 
 In English:
@@ -133,6 +141,10 @@ C:\Users\...\AppData\LocalLow\BNF\BDNF\BDNFProjects\GlobalAssets
 and delete the SystemeSolaire directory. from the "GlobalAssets" directory
 
 Restart the BDNF program
+
+Note: I made another small tool that might be useful if you want to make comics:
+SheetChopper which automatically cuts objects on a board-like image:
+https://github.com/Giribot/SheetChopper
 
 Bye!
 
