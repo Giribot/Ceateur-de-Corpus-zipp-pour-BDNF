@@ -55,6 +55,17 @@ Voilà, c'est rudimentaire mais ça fait le job.
 
 Bye !
 
+En cas de soucis d'importation et si BDNF gèle et ne redémarre pas:
+Arrêter le programme BDNF puis....
+Repérer le nom du fichier zip qui a posé problème:
+Exemple: vous avez généré un corpus nommé
+"SystemeSolaire.zip"
+Allez ici:
+C:\Users\...\AppData\LocalLow\BNF\BDNF\BDNFProjects\GlobalAssets
+
+et effacer le répertoire SystemeSolaire. du répertoire "GlobalAssets"
+
+Redémarrer le programme BDNF
 -----
 
 In English:
@@ -106,4 +117,18 @@ BDNFcreator.py
 To generate BDNF-compatible zipped "corpus" you can install in the app BDNF via "Add Corpus" in this app.
 There you go, it's rudimentary but it does the job.
 
+In case of import problems and if BDNF freezes and does not restart:
+Stop the BDNF program then....
+Locate the name of the zip file that caused the problem:
+Example: you generated a corpus named
+"SystemeSolaire.zip"
+Go here:
+C:\Users\...\AppData\LocalLow\BNF\BDNF\BDNFProjects\GlobalAssets
+
+and delete the SystemeSolaire directory. from the "GlobalAssets" directory
+
+Restart the BDNF program
+
 Bye!
+
+
