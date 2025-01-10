@@ -1,11 +1,26 @@
 import os
 import zipfile
-import io  # Importation ajoutée
+import io
 from PIL import Image
 from rembg import remove
 from tkinter import Tk, filedialog, simpledialog
 
-def create_bdnf_zip(input_dir, output_zip, thumbnail_size=(256, 256), detour=True):
+def resize_image(img, max_size):
+    """
+    Redimensionne une image si elle dépasse une taille maximale.
+
+    Args:
+        img (PIL.Image): L'image à redimensionner.
+        max_size (tuple): Taille maximale (largeur, hauteur).
+
+    Returns:
+        PIL.Image: L'image redimensionnée ou originale.
+    """
+    if img.width > max_size[0] or img.height > max_size[1]:
+        img.thumbnail(max_size)
+    return img
+
+def create_bdnf_zip(input_dir, output_zip, thumbnail_size=(256, 256), max_image_size=(1920, 1080), detour=True):
     """
     Crée un fichier ZIP compatible BDNF avec une structure Thumbnails et Highres.
 
@@ -13,6 +28,7 @@ def create_bdnf_zip(input_dir, output_zip, thumbnail_size=(256, 256), detour=Tru
         input_dir (str): Répertoire contenant les images source.
         output_zip (str): Nom du fichier ZIP de sortie.
         thumbnail_size (tuple): Dimensions des vignettes (largeur, hauteur).
+        max_image_size (tuple): Taille maximale des images (largeur, hauteur).
         detour (bool): Indique si les images doivent être détourées.
     """
     thumbnails_dir = "Thumbnails"
@@ -33,6 +49,9 @@ def create_bdnf_zip(input_dir, output_zip, thumbnail_size=(256, 256), detour=Tru
                                 # Utiliser rembg pour supprimer le fond
                                 img_bytes = remove(open(file_path, "rb").read())
                                 img = Image.open(io.BytesIO(img_bytes)).convert("RGBA")
+
+                            # Redimensionner l'image si elle dépasse la taille maximale
+                            img = resize_image(img, max_image_size)
 
                             # Enregistrer l'image haute résolution
                             temp_highres_path = os.path.join(os.getcwd(), f"{file}.highres")
