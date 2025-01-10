@@ -1,6 +1,7 @@
 French / English
 
 In French:
+
 Un petit script python qui prend un répertoire avec vos objets et images
 il peut détourer ou pas vos images et génère un fichier zip normalement compatible avec le programme BDNF de Gallica....
 (lire le site de gallica pour savoir comment rajouter des corpus, et donc les votres !)
@@ -10,6 +11,8 @@ du coup, sans le détourage, le traitement est tres rapide !
 vos données et images ne partent pas sur un serveur externe et sont intégralement traitées en local sur votre PC. +++
 c'est fou, on peut utiliser des bibliothèques IA sur python directement en 2025 en deux coups de cuillères à pot !
 (une première pour moi)
+
+Edit: 10/01/2025: Le script marche à 100% désormais et prend en compte la taille des images (quitte à redimensionner les images trop grandes pour éviter de planter BDNF. Si ça a bogué avec l'ancienne version du script: je vous ai mis plus bas comment réparer)
 Amusez vous bien.
 
 n'hesitez pas à forker pour donner à ce script une UI jolie et accessible à tous et toutes.
@@ -69,6 +72,8 @@ Redémarrer le programme BDNF
 -----
 
 In English:
+
+Edit: 10/01/2025: The script now works 100% and takes into account the size of the images (even if it means resizing the images that are too large to avoid crashing BDNF. If it bugged with the old version of the script: I've put below how to fix it)
 
 A small python script that takes a directory with your objects and images
 it can clip or not your images and generates a zip file normally compatible with the BDNF program of Gallica....
