@@ -33,6 +33,7 @@ def create_bdnf_zip(input_dir, output_zip, thumbnail_size=(256, 256), max_image_
     """
     thumbnails_dir = "Thumbnails"
     highres_dir = "Highres"
+    clusters = []
 
     with zipfile.ZipFile(output_zip, 'w', zipfile.ZIP_DEFLATED) as zipf:
         # Parcourir les images dans le répertoire source
@@ -67,11 +68,15 @@ def create_bdnf_zip(input_dir, output_zip, thumbnail_size=(256, 256), max_image_
                             thumbnail_path = os.path.join(thumbnails_dir, file)
                             zipf.write(temp_thumb_path, thumbnail_path)
                             os.remove(temp_thumb_path)
+
+                            # Ajouter les informations au fichier XML
+                            clusters.append(f"<Cluster><Name>{file}</Name><Path>{highres_path}</Path></Cluster>")
                     except Exception as e:
                         print(f"Erreur lors du traitement de l'image {file}: {e}")
 
-        # Ajouter un fichier Cluster.xml vide par défaut (ou personnalisé)
-        cluster_content = """<Cluster><Description>BDNF Corpus</Description></Cluster>"""
+        # Ajouter un fichier Cluster.xml avec une structure compatible
+        cluster_content = """<Clusters>
+{}</Clusters>""".format("\n".join(clusters))
         zipf.writestr("Cluster.xml", cluster_content)
 
     print(f"Fichier ZIP créé : {output_zip}")
