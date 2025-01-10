@@ -4,7 +4,7 @@ In French:
 Un petit script python qui prend un répertoire avec vos objets et images
 il peut détourer ou pas vos images et génère un fichier zip normalement compatible avec le programme BDNF de Gallica....
 (lire le site de gallica pour savoir comment rajouter des corpus, et donc les votres !)
-attention, le détourage d'objets oeut etre long car j'utilise une petite IA "Rembg" mais le résultat est bon.
+attention, le détourage d'objets peut etre long car j'utilise une petite IA "Rembg" mais le résultat est bon.
 mais vous pouvez refuser le traitement par cette ia locale (bibliothèque python Rembg en tapant 'non'.)
 du coup, sans le détourage, le traitement est tres rapide !
 vos données et images ne partent pas sur un serveur externe et sont intégralement traitées en local sur votre PC. +++
@@ -40,9 +40,11 @@ il me semble que les fichiers ".bat" de Windows ne marche pas.
 
 pour Mac:
 debrouillez vous !
-(désolé, c'est un des seuls ordinateurs que je n'aile pas, mais ca ne devrait pas etre compliqué)
+(désolé, c'est un des seuls ordinateurs que je n'aime pas, mais ca ne devrait pas etre compliqué)
 
+Pour Linux et Mac:
 Veuillez installer rembg et les autres bibliothèques bibliothèque python contenu dans le fichier texte RunMeFirst.bat dans ce répertoire.
+(ouvrir ce fichier avec un éditeur texte et exécutez manuellement les installations des bibliothêques Python contenu dans ce fichier ! (rien de très difficile))
 
 
 Puis vous pouvez lancer le script
@@ -95,7 +97,8 @@ for Mac:
 figure it out yourself!
 (sorry, it's one of the only computers I don't have, but it shouldn't be complicated)
 
-Please install rembg and the other python libraries contained in the text file RunMeFirst.bat in this directory.
+Please install rembg and the other python libraries contained in the text file RunMeFirst.bat
+(open this file with a text editor and manually run the installations of the Python libraries contained in this file! (nothing too difficult)) in this directory).
 
 Then you can run the script
 BDNFcreator.py
